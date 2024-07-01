@@ -16,12 +16,12 @@ async function loadSoura() {
 
 function playSoura(data) {
     const today = new Date();
-    const startOfYear = new Date(today.getFullYear(), 0, 1);
-    const dayOfYear = Math.floor((today - startOfYear) / (1000 * 60 * 60 * 24));
-    const souraIndex = dayOfYear % data.length; // Ensure the index is within the bounds of the array
-    const selectedsoura = data[souraIndex];
-    const audioPlayer = document.getElementById('audioPlayer');
-    const souraTitle = document.getElementById('souraTitle');
+    const dayOfMonth = today.getDate();
+
+     const souraIndex = (dayOfMonth - 1) % data.length; // -1 because date starts from 1
+     const selectedsoura = data[souraIndex];
+     const audioPlayer = document.getElementById('audioPlayer');
+     const souraTitle = document.getElementById('souraTitle');
 
     if (selectedsoura) {
         if (currentSoura !== selectedsoura.url) {
