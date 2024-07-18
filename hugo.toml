@@ -1,0 +1,7 @@
+baseURL = 'https://example.org/'
+languageCode = 'ar-eg'
+title = 'كل يوم سورة'
+
+
+[Params]
+ dateFormat = "Jan 2, 2006"
