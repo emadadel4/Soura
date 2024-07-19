@@ -4,7 +4,7 @@
 
 <div align="center">
 
-<a href="https://emadadel4.github.io/Soura" target="_blink" style="text-decoration: none;">أستمع الان</a>
+<a href="https://emadadel4.github.io/Soura" target="_blink" style="text-decoration: none;">أستمع الان 🔊</a>
 
  <p class="footer-heart">
 Made with <g-emoji class="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
