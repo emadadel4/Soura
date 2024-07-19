@@ -18,19 +18,19 @@ function playSong(data) {
     const today = new Date();
     const startOfYear = new Date(today.getFullYear(), 0, 1);
     const dayOfYear = Math.floor((today - startOfYear) / (1000 * 60 * 60 * 24));
-    const songIndex = dayOfYear % data.length; // Ensure the index is within the bounds of the array
-    const selectedSong = data[songIndex];
+    const souraIndex = dayOfYear % data.length; // Ensure the index is within the bounds of the array
+    const selectedsoura = data[souraIndex];
     const audioPlayer = document.getElementById('audioPlayer');
     const souraTitle = document.getElementById('souraTitle');
 
-    if (selectedSong) {
-        if (currentSong !== selectedSong.url) {
-            audioPlayer.src = selectedSong.url;
+    if (selectedsoura) {
+        if (currentSong !== selectedsoura.url) {
+            audioPlayer.src = selectedsoura.url;
             audioPlayer.load();
-            currentSong = selectedSong.url;
+            currentSong = selectedsoura.url;
 
             // Retrieve and set playback time
-            const savedTime = localStorage.getItem(`audioTime_${selectedSong.url}`);
+            const savedTime = localStorage.getItem(`audioTime_${selectedsoura.url}`);
             if (savedTime) {
                 audioPlayer.currentTime = parseFloat(savedTime);
             } else {
@@ -38,11 +38,11 @@ function playSong(data) {
             }
         }
 
-        souraTitle.textContent = `اليوم سورة: ${selectedSong.name}`;
+        souraTitle.textContent = `اليوم سورة: ${selectedsoura.name}`;
 
         // Save playback time periodically
         audioPlayer.addEventListener('timeupdate', () => {
-            localStorage.setItem(`audioTime_${selectedSong.url}`, audioPlayer.currentTime);
+            localStorage.setItem(`audioTime_${selectedsoura.url}`, audioPlayer.currentTime);
         });
     } else {
         souraTitle.textContent = 'Song not found';
