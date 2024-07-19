@@ -13,7 +13,6 @@ async function loadSoura() {
         console.error('Error fetching the soura list:', error);
     }
 }
-
 function playSoura(data) {
     const today = new Date();
     const dayOfMonth = today.getDate();
@@ -49,7 +48,6 @@ function playSoura(data) {
         console.error('Selected soura not found.');
     }
 }
-
 function togglePlayPause() {
     const button = document.getElementById('playPauseButton');
     const audioPlayer = document.getElementById('audioPlayer');
@@ -67,5 +65,4 @@ function togglePlayPause() {
 
     isPlaying = !isPlaying;
 }
-
 loadSoura();
