@@ -1,20 +1,20 @@
 let isPlaying = false;
-let currentSong = null;
+let currentSoura = null;
 
-async function loadSongs() {
+async function loadSoura() {
     try {
         const response = await fetch('https://raw.githubusercontent.com/emadadel4/Soura/main/assets/db.json');
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
-        playSong(data);
+        playSoura(data);
     } catch (error) {
-        console.error('Error fetching the song list:', error);
+        console.error('Error fetching the soura list:', error);
     }
 }
 
-function playSong(data) {
+function playSoura(data) {
     const today = new Date();
     const startOfYear = new Date(today.getFullYear(), 0, 1);
     const dayOfYear = Math.floor((today - startOfYear) / (1000 * 60 * 60 * 24));
@@ -24,10 +24,10 @@ function playSong(data) {
     const souraTitle = document.getElementById('souraTitle');
 
     if (selectedsoura) {
-        if (currentSong !== selectedsoura.url) {
+        if (currentSoura !== selectedsoura.url) {
             audioPlayer.src = selectedsoura.url;
             audioPlayer.load();
-            currentSong = selectedsoura.url;
+            currentSoura = selectedsoura.url;
 
             // Retrieve and set playback time
             const savedTime = localStorage.getItem(`audioTime_${selectedsoura.url}`);
@@ -68,5 +68,5 @@ function togglePlayPause() {
     isPlaying = !isPlaying;
 }
 
-// Initialize and load the song list
-loadSongs();
+// Initialize and load the soura list
+loadSoura();
