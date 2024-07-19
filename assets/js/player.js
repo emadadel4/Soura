@@ -22,7 +22,7 @@ function playSoura(data) {
     if (selectedSong) {
         audioPlayer.src = selectedSong.url;
         audioPlayer.load();
-        songTitle.textContent = `Now playing: ${selectedSong.name}`; // Update text here
+        songTitle.textContent = `اليوم سورة: ${selectedSong.name}`; // Update text here
         console.log(`Now playing: ${selectedSong.name}`);
     } else {
         songTitle.textContent = 'Song not found'; // Update text if no song found
