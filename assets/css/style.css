@@ -31,6 +31,10 @@ body {
     border: none;
 }
 
+a{
+    text-decoration: none;
+}
+
 .button:hover {
     background-color: #45a049;
 }
