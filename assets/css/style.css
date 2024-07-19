@@ -40,15 +40,15 @@ a{
 }
 
 .button i {
-    pointer-events: none; /* Prevents clicks on the icon */
+    pointer-events: none;
 }
 
 .play i {
-    content: '\f04b'; /* FontAwesome play icon */
+    content: '\f04b';
 }
 
 .pause i {
-    content: '\f04c'; /* FontAwesome pause icon */
+    content: '\f04c'; 
 }
 
 footer {
