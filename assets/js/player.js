@@ -67,4 +67,5 @@ function togglePlayPause() {
 
     isPlaying = !isPlaying;
 }
+
 loadSoura();
