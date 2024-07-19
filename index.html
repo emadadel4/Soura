@@ -3,115 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily MP3 Player</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            margin: 0;
-            flex-direction: column;
-        }
+    <title>Daily Quran Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 
-        .text {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #333;
-        }
 
-        .button {
-            width: 100px;
-            height: 100px;
-            background-color: #0004ff88;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #0004ff88;
-        }
-
-        .icon {
-            width: 0;
-            height: 0;
-            border-style: solid;
-        }
-
-        .play {
-            border-width: 15px 0 15px 30px;
-            border-color: transparent transparent transparent white;
-        }
-
-        .pause {
-            display: flex;
-            gap: 10px;
-        }
-
-        .pause div {
-            width: 10px;
-            height: 30px;
-            background-color: white;
-        }
-    </style>
 </head>
 <body>
 
-<div class="text">Music Player</div>
-<div class="button" onclick="togglePlayPause()">
-    <div id="icon" class="icon play"></div>
-</div>
-<audio id="audioPlayer"></audio>
-
-<script>
-    async function loadSongs() {
-        try {
-            const response = await fetch('list.json');
-            if (!response.ok) throw new Error('Network response was not ok');
-            const data = await response.json();
-            playSong(data);
-        } catch (error) {
-            console.error('Error fetching the song list:', error);
-        }
-    }
-
-    function playSong(data) {
-        const today = new Date();
-        const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
-        const selectedSong = data[dayOfYear % data.length];
-        const audioPlayer = document.getElementById('audioPlayer');
         
-        audioPlayer.src = selectedSong.url;
-        audioPlayer.load();
+            <div id="songTitle" class="text">Music Player</div>
+            <div id="playPauseButton" class="button play" onclick="togglePlayPause()">
+                <i class="fas fa-play"></i>
+            </div>
+            <audio id="audioPlayer"></audio>
         
-        console.log(`Now playing: ${selectedSong.name}`);
-    }
-
-    let isPlaying = false;
-
-    function togglePlayPause() {
-        const icon = document.getElementById('icon');
-        const audioPlayer = document.getElementById('audioPlayer');
         
-        if (isPlaying) {
-            audioPlayer.pause();
-            icon.classList.replace('pause', 'play');
-        } else {
-            audioPlayer.play();
-            icon.classList.replace('play', 'pause');
-        }
-        
-        isPlaying = !isPlaying;
-    }
+            <script src="assets/js/player.js"></script>
 
-    loadSongs();
-</script>
+        <footer>
+            <small>
+                Developer by Emad Adel
+                </small>
+                <p>
+                <i class="fa-brands fa-github"></i> <small>Source Code</small>
+                </p>
+                <script src="https://kit.fontawesome.com/c86a35ea26.js" crossorigin="anonymous"></script>
+        </footer>
+       
 
+
+    
+
+    
 
 </body>
+
+
 </html>

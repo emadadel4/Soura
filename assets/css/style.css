@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    flex-direction: column;
+    font-family: "Cairo", sans-serif;
+
+}
+
+.text {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.button {
+    width: 80px;
+    height: 80px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 36px;
+    color: white;
+    border: none;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+.button i {
+    pointer-events: none; /* Prevents clicks on the icon */
+}
+
+.play i {
+    content: '\f04b'; /* FontAwesome play icon */
+}
+
+.pause i {
+    content: '\f04c'; /* FontAwesome pause icon */
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: black;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
