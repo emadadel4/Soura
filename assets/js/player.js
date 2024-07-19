@@ -45,8 +45,8 @@ function playSong(data) {
             localStorage.setItem(`audioTime_${selectedsoura.url}`, audioPlayer.currentTime);
         });
     } else {
-        souraTitle.textContent = 'Song not found';
-        console.error('Selected song not found.');
+        souraTitle.textContent = 'soura not found';
+        console.error('Selected soura not found.');
     }
 }
 
