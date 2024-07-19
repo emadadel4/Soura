@@ -28,8 +28,7 @@ let isPlaying = false;
                 currentSong = selectedSong.url;
             }
 
-            songTitle.textContent = `Now playing: ${selectedSong.name}`;
-            console.log(`Now playing: ${selectedSong.name}`);
+            songTitle.textContent = `اليوم سورة: ${selectedSong.name}`;
 
             // Retrieve and set playback time
             const savedTime = localStorage.getItem('audioTime');
