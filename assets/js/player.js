@@ -16,38 +16,48 @@ async function loadSoura() {
 function playSoura(data) {
     const today = new Date();
     const dayOfMonth = today.getDate();
+    const startIndex = (dayOfMonth - 1) * 3; // Calculate start index for three songs
 
-     const souraIndex = (dayOfMonth - 1) % data.length; // -1 because date starts from 1
-     const selectedsoura = data[souraIndex];
-     const audioPlayer = document.getElementById('audioPlayer');
-     const souraTitle = document.getElementById('souraTitle');
+    const audioPlayer = document.getElementById('audioPlayer');
+    const souraTitle = document.getElementById('souraTitle');
+    let currentIndex = 0;
 
-    if (selectedsoura) {
-        if (currentSoura !== selectedsoura.url) {
-            audioPlayer.src = selectedsoura.url;
+    const playCurrentSoura = () => {
+        const souraIndex = (startIndex + currentIndex) % data.length;
+        const selectedSoura = data[souraIndex];
+
+        if (selectedSoura) {
+            audioPlayer.src = selectedSoura.url;
             audioPlayer.load();
-            currentSoura = selectedsoura.url;
 
             // Retrieve and set playback time
-            const savedTime = localStorage.getItem(`audioTime_${selectedsoura.url}`);
-            if (savedTime) {
-                audioPlayer.currentTime = parseFloat(savedTime);
-            } else {
-                audioPlayer.currentTime = 0; // Start from beginning if no saved time
-            }
+            const savedTime = localStorage.getItem(`audioTime_${selectedSoura.url}`);
+            audioPlayer.currentTime = savedTime ? parseFloat(savedTime) : 0;
+
+            souraTitle.textContent = `اليوم سورة: ${selectedSoura.name}`;
+
+            audioPlayer.play();
+
+            // Save playback time periodically
+            audioPlayer.addEventListener('timeupdate', () => {
+                localStorage.setItem(`audioTime_${selectedSoura.url}`, audioPlayer.currentTime);
+            });
+
+            // Move to next soura when the current one ends
+            audioPlayer.onended = () => {
+                currentIndex = (currentIndex + 1) % 3;
+                playCurrentSoura();
+            };
+        } else {
+            souraTitle.textContent = 'Soura not found';
+            console.error('Selected soura not found.');
         }
+    };
 
-        souraTitle.textContent = `اليوم سورة: ${selectedsoura.name}`;
-
-        // Save playback time periodically
-        audioPlayer.addEventListener('timeupdate', () => {
-            localStorage.setItem(`audioTime_${selectedsoura.url}`, audioPlayer.currentTime);
-        });
-    } else {
-        souraTitle.textContent = 'soura not found';
-        console.error('Selected soura not found.');
-    }
+    playCurrentSoura();
 }
+
+
 function togglePlayPause() {
     const button = document.getElementById('playPauseButton');
     const audioPlayer = document.getElementById('audioPlayer');
