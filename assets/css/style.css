@@ -87,9 +87,9 @@ main {
     justify-content: center;
     align-items: center;
     max-width: 500px;
-    padding: 20px;
+    padding: 2px;
     border-radius: 20px;
     background-color: white;
-    padding: 100px;
+    padding: 50px;
     text-align: center
 }
