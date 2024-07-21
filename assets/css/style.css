@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: whitesmoke;
     margin: 0;
     flex-direction: column;
     font-family: "Cairo", sans-serif;
@@ -76,5 +76,8 @@ main {
     align-items: center;
     max-width: 500px;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 20px;
+    background-color: white;
+    padding: 100px;
+
 }
