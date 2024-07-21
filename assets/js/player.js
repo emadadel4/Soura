@@ -8,15 +8,27 @@ async function loadSoura() {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
+        displaySouraNames(data);
         playSoura(data);
     } catch (error) {
         console.error('Error fetching the soura list:', error);
     }
 }
+
+function displaySouraNames(data) {
+    const today = new Date();
+    const dayOfMonth = today.getDate();
+    const startIndex = (dayOfMonth - 1) * 3;
+
+    const souraNames = data.slice(startIndex, startIndex + 3).map(soura => soura.name);
+    const souraListElement = document.getElementById('souraList');
+    souraListElement.innerHTML = souraNames.map(name => `<li>${name}.</li>`).join('');
+}
+
 function playSoura(data) {
     const today = new Date();
     const dayOfMonth = today.getDate();
-    const startIndex = (dayOfMonth - 1) * 3; // Calculate start index for three songs
+    const startIndex = (dayOfMonth - 1) * 3;
 
     const audioPlayer = document.getElementById('audioPlayer');
     const souraTitle = document.getElementById('souraTitle');
@@ -30,20 +42,17 @@ function playSoura(data) {
             audioPlayer.src = selectedSoura.url;
             audioPlayer.load();
 
-            // Retrieve and set playback time
             const savedTime = localStorage.getItem(`audioTime_${selectedSoura.url}`);
             audioPlayer.currentTime = savedTime ? parseFloat(savedTime) : 0;
 
-            souraTitle.textContent = `اليوم سورة: ${selectedSoura.name}`;
+            souraTitle.textContent = `اليوم`;
 
             audioPlayer.play();
 
-            // Save playback time periodically
             audioPlayer.addEventListener('timeupdate', () => {
                 localStorage.setItem(`audioTime_${selectedSoura.url}`, audioPlayer.currentTime);
             });
 
-            // Move to next soura when the current one ends
             audioPlayer.onended = () => {
                 currentIndex = (currentIndex + 1) % 3;
                 playCurrentSoura();
@@ -56,7 +65,6 @@ function playSoura(data) {
 
     playCurrentSoura();
 }
-
 
 function togglePlayPause() {
     const button = document.getElementById('playPauseButton');
@@ -75,4 +83,5 @@ function togglePlayPause() {
 
     isPlaying = !isPlaying;
 }
+
 loadSoura();

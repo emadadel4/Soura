@@ -12,8 +12,20 @@ body {
 
 .text {
     font-size: 24px;
-    margin-bottom: 20px;
     color: #333;
+    text-align: center;
+}
+
+#souraList {
+    display: flex;
+    justify-content: center; /* Center the list items horizontally */
+    text-align: center;
+    text-decoration: none;
+    list-style-type: none;
+    gap: 10px;
+    padding: 0;
+    margin-bottom: 50px;
+
 }
 
 .button {
@@ -79,5 +91,5 @@ main {
     border-radius: 20px;
     background-color: white;
     padding: 100px;
-
+    text-align: center
 }
