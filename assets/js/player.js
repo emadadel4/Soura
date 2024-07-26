@@ -45,7 +45,7 @@ function playSoura(data) {
             const savedTime = localStorage.getItem(`audioTime_${selectedSoura.url}`);
             audioPlayer.currentTime = savedTime ? parseFloat(savedTime) : 0;
 
-            souraTitle.textContent = `اليوم`;
+            souraTitle.textContent = `الان: ${selectedSoura.name}`;
 
             audioPlayer.play();
 
