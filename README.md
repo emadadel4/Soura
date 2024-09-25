@@ -1,6 +1,12 @@
 
-<h1 align="center">كل يوم سورة من القرآن الكريم | Every day a chapter of the Holy Quran</h1>
+<h2 align="center">كل يوم سورة من القرآن الكريم | Every day a chapter of the Holy Quran</h2>
 
+
+<p>
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/emadadel4/Soura/refs/heads/main/assets/images/demo.JPG" alt="ITT Demo" style="max-width: 100%;">
+</p>
+</p>
 
 <div align="center">
 
