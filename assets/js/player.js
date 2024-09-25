@@ -33,7 +33,8 @@ function playSoura(data) {
     const audioPlayer = document.getElementById('audioPlayer');
     const souraTitle = document.getElementById('souraTitle');
     let currentIndex = 0;
-
+    let timeUpdateListener = null; 
+    
     const playCurrentSoura = () => {
         const souraIndex = (startIndex + currentIndex) % data.length;
         const selectedSoura = data[souraIndex];
@@ -56,11 +57,19 @@ function playSoura(data) {
             // Play the audio
             audioPlayer.play();
 
-            // Save the current time of the audio during playback
-            audioPlayer.addEventListener('timeupdate', () => {
-                localStorage.setItem(`audioTime_${selectedSoura.url}`, audioPlayer.currentTime);
-            });
+            // Remove any previous 'timeupdate' listener before adding a new one
+             if (timeUpdateListener) {
+                audioPlayer.removeEventListener('timeupdate', timeUpdateListener);
+            }
 
+            // Define the new 'timeupdate' listener for the current soura
+            timeUpdateListener = () => {
+                localStorage.setItem(`audioTime_${selectedSoura.url}`, audioPlayer.currentTime);
+            };
+
+            // Attach the 'timeupdate' listener for the current soura
+            audioPlayer.addEventListener('timeupdate', timeUpdateListener);
+            
             // Play the next soura once the current one ends
             audioPlayer.onended = () => {
                 currentIndex = (currentIndex + 1) % 3;
