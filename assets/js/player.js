@@ -1,5 +1,10 @@
 let isPlaying = false;
 let currentSoura = null;
+const audioPlayer = document.getElementById('audioPlayer');
+const souraTitle = document.getElementById('souraTitle');
+const button = document.getElementById('playPauseButton');
+const icon = button.querySelector('i');
+
 
 async function loadSoura() {
     try {
@@ -30,8 +35,6 @@ function playSoura(data) {
     const dayOfMonth = today.getDate();
     const startIndex = (dayOfMonth - 1) * 3;
 
-    const audioPlayer = document.getElementById('audioPlayer');
-    const souraTitle = document.getElementById('souraTitle');
     let currentIndex = 0;
 
     const playCurrentSoura = () => {
@@ -50,8 +53,7 @@ function playSoura(data) {
             const savedTime = localStorage.getItem(`audioTime_${selectedSoura.url}`);
             audioPlayer.currentTime = savedTime ? parseFloat(savedTime) : 0;
 
-            // Set the text of the soura title element
-            souraTitle.textContent = `الان: ${selectedSoura.name}`;
+            souraTitle.textContent = `سور اليوم`;
 
             // Play the audio
             audioPlayer.play();
@@ -63,6 +65,13 @@ function playSoura(data) {
 
             audioPlayer.addEventListener('timeupdate', timeUpdateListener);
 
+
+            audioPlayer.onplay = () => {
+                souraTitle.textContent = `الان - ${selectedSoura.name}`;
+                button.classList.replace('play', 'pause');
+                icon.classList.replace('fa-play', 'fa-pause');
+            };
+
             // Play the next soura once the current one ends
             audioPlayer.onended = () => {
                 // Remove the timeupdate listener to avoid memory leaks
@@ -73,7 +82,8 @@ function playSoura(data) {
                 if (currentIndex < 3) {
                     playCurrentSoura();
                 } else {
-                    souraTitle.textContent = 'لقد استمعت الثالث سور اليوم';
+                    localStorage.clear(); // Clear all storage after all souras have been played
+                    location.reload(); // Refresh the page
                 }
             };
         } else {
@@ -87,9 +97,7 @@ function playSoura(data) {
 
 
 function togglePlayPause() {
-    const button = document.getElementById('playPauseButton');
-    const audioPlayer = document.getElementById('audioPlayer');
-    const icon = button.querySelector('i');
+ 
 
     if (isPlaying) {
         audioPlayer.pause();
@@ -102,6 +110,7 @@ function togglePlayPause() {
     }
 
     isPlaying = !isPlaying;
+
 }
 
 loadSoura();
