@@ -13,14 +13,14 @@ async function loadSoura() {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
-        displaySouraNames(data);
-        playSoura(data);
+        DisplaySouraNames(data);
+        PlaySoura(data);
     } catch (error) {
         console.error('Error fetching the soura list:', error);
     }
 }
 
-function displaySouraNames(data) {
+function DisplaySouraNames(data) {
     const today = new Date();
     const dayOfMonth = today.getDate();
     const startIndex = (dayOfMonth - 1) * 3;
@@ -30,7 +30,7 @@ function displaySouraNames(data) {
     souraListElement.innerHTML = souraNames.map(name => `<li>${name}.</li>`).join('');
 }
 
-function playSoura(data) {
+function PlaySoura(data) {
     const today = new Date();
     const dayOfMonth = today.getDate();
     const startIndex = (dayOfMonth - 1) * 3;
@@ -95,8 +95,7 @@ function playSoura(data) {
     playCurrentSoura();
 }
 
-
-function togglePlayPause() {
+function TogglePlay() {
  
 
     if (isPlaying) {
