@@ -1,5 +1,5 @@
 
-<h2 align="center">كل يوم سور من القرآن الكريم | Every day a chapter of the Holy Quran</h2>
+<h2 align="center">كل يوم سور من القرآن الكريم | Every day a chapters of the Holy Quran</h2>
 
 
 <p>
