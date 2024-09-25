@@ -39,20 +39,29 @@ function playSoura(data) {
         const selectedSoura = data[souraIndex];
 
         if (selectedSoura) {
+            
+            // Set the audio source
             audioPlayer.src = selectedSoura.url;
             audioPlayer.load();
+
+            // Set the title attribute of the audio element
+            audioPlayer.setAttribute('title', selectedSoura.name);
 
             const savedTime = localStorage.getItem(`audioTime_${selectedSoura.url}`);
             audioPlayer.currentTime = savedTime ? parseFloat(savedTime) : 0;
 
+            // Set the text of the soura title element
             souraTitle.textContent = `الان: ${selectedSoura.name}`;
 
+            // Play the audio
             audioPlayer.play();
 
+            // Save the current time of the audio during playback
             audioPlayer.addEventListener('timeupdate', () => {
                 localStorage.setItem(`audioTime_${selectedSoura.url}`, audioPlayer.currentTime);
             });
 
+            // Play the next soura once the current one ends
             audioPlayer.onended = () => {
                 currentIndex = (currentIndex + 1) % 3;
                 playCurrentSoura();
