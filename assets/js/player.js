@@ -70,7 +70,7 @@ function playSoura(data) {
                 
                 // Increment currentIndex and play the next soura
                 currentIndex++;
-                if (currentIndex < 3) { // Change 3 to the desired number of souras to play
+                if (currentIndex < 3) {
                     playCurrentSoura();
                 } else {
                     souraTitle.textContent = 'لقد استمعت الثالث سور اليوم';
