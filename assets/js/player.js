@@ -33,13 +33,12 @@ function playSoura(data) {
     const audioPlayer = document.getElementById('audioPlayer');
     const souraTitle = document.getElementById('souraTitle');
     let currentIndex = 0;
-    
+
     const playCurrentSoura = () => {
         const souraIndex = (startIndex + currentIndex) % data.length;
         const selectedSoura = data[souraIndex];
 
         if (selectedSoura) {
-            
             // Set the audio source
             audioPlayer.src = selectedSoura.url;
             audioPlayer.load();
@@ -47,6 +46,7 @@ function playSoura(data) {
             // Set the title attribute of the audio element
             audioPlayer.setAttribute('title', selectedSoura.name);
 
+            // Retrieve the saved time
             const savedTime = localStorage.getItem(`audioTime_${selectedSoura.url}`);
             audioPlayer.currentTime = savedTime ? parseFloat(savedTime) : 0;
 
@@ -57,17 +57,24 @@ function playSoura(data) {
             audioPlayer.play();
 
             // Save the current time of the audio during playback
-             audioPlayer.addEventListener('timeupdate', () => {
+            const timeUpdateListener = () => {
                 localStorage.setItem(`audioTime_${selectedSoura.url}`, audioPlayer.currentTime);
-            });
+            };
 
-            // Attach the 'timeupdate' listener for the current soura
             audioPlayer.addEventListener('timeupdate', timeUpdateListener);
-            
+
             // Play the next soura once the current one ends
             audioPlayer.onended = () => {
-                currentIndex = (currentIndex + 1) % 3;
-                playCurrentSoura();
+                // Remove the timeupdate listener to avoid memory leaks
+                audioPlayer.removeEventListener('timeupdate', timeUpdateListener);
+                
+                // Increment currentIndex and play the next soura
+                currentIndex++;
+                if (currentIndex < 3) { // Change 3 to the desired number of souras to play
+                    playCurrentSoura();
+                } else {
+                    souraTitle.textContent = 'لقد استمعت الثالث سور اليوم';
+                }
             };
         } else {
             souraTitle.textContent = 'Soura not found';
@@ -77,6 +84,7 @@ function playSoura(data) {
 
     playCurrentSoura();
 }
+
 
 function togglePlayPause() {
     const button = document.getElementById('playPauseButton');
