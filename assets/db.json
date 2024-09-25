@@ -224,67 +224,71 @@
         "url": "https://server8.mp3quran.net/afs/057.mp3"
     },
     {
-        "name": "البلد",
+        "name": "المجادلة",
         "url": "https://server8.mp3quran.net/afs/058.mp3"
     },
     {
-        "name": "الشمس",
+        "name": "الحشر",
         "url": "https://server8.mp3quran.net/afs/059.mp3"
     },
     {
-        "name": "الليل",
+        "name": "الممتحنة",
         "url": "https://server8.mp3quran.net/afs/060.mp3"
     },
     {
-        "name": "الضحى",
+        "name": "الصف",
         "url": "https://server8.mp3quran.net/afs/061.mp3"
     },
     {
-        "name": "الشرح",
+        "name": "الجمعة",
         "url": "https://server8.mp3quran.net/afs/062.mp3"
     },
     {
-        "name": "التين",
+        "name": "المنافقون",
         "url": "https://server8.mp3quran.net/afs/063.mp3"
     },
     {
-        "name": "العلق",
+        "name": "التغابن",
         "url": "https://server8.mp3quran.net/afs/064.mp3"
     },
     {
-        "name": "القدر",
+        "name": "الطلاق",
         "url": "https://server8.mp3quran.net/afs/065.mp3"
     },
     {
-        "name": "البينة",
+        "name": "التحريم",
         "url": "https://server8.mp3quran.net/afs/066.mp3"
     },
     {
-        "name": "الزلزلة",
+        "name": "الملك",
         "url": "https://server8.mp3quran.net/afs/067.mp3"
     },
     {
-        "name": "العاديات",
+        "name": "القلم",
         "url": "https://server8.mp3quran.net/afs/068.mp3"
     },
     {
-        "name": "القارعة",
+        "name": "القلم",
         "url": "https://server8.mp3quran.net/afs/069.mp3"
     },
     {
-        "name": "التكاثر",
+        "name": "الحاقة",
+        "url": "https://server8.mp3quran.net/afs/069.mp3"
+    },
+    {
+        "name": "المعارج",
         "url": "https://server8.mp3quran.net/afs/070.mp3"
     },
     {
-        "name": "العصر",
+        "name": "نوح",
         "url": "https://server8.mp3quran.net/afs/071.mp3"
     },
     {
-        "name": "الهمزة",
+        "name": "الجن",
         "url": "https://server8.mp3quran.net/afs/072.mp3"
     },
     {
-        "name": "الفيل",
+        "name": "المزمل",
         "url": "https://server8.mp3quran.net/afs/073.mp3"
     },
     {
@@ -292,35 +296,163 @@
         "url": "https://server8.mp3quran.net/afs/074.mp3"
     },
     {
-        "name": "الماعون",
+        "name": "القيامة",
         "url": "https://server8.mp3quran.net/afs/075.mp3"
     },
     {
-        "name": "الكوثر",
+        "name": "الإنسان",
         "url": "https://server8.mp3quran.net/afs/076.mp3"
     },
     {
-        "name": "الكافرون",
+        "name": "المرسلات",
         "url": "https://server8.mp3quran.net/afs/077.mp3"
     },
     {
-        "name": "النصر",
+        "name": "النبأ",
         "url": "https://server8.mp3quran.net/afs/078.mp3"
     },
     {
-        "name": "المسد",
+        "name": "النازعات",
         "url": "https://server8.mp3quran.net/afs/079.mp3"
     },
     {
-        "name": "الإخلاص",
+        "name": "عبس",
         "url": "https://server8.mp3quran.net/afs/080.mp3"
     },
     {
-        "name": "الفلق",
+        "name": "التكوير",
         "url": "https://server8.mp3quran.net/afs/081.mp3"
     },
     {
-        "name": "الناس",
+        "name": "الإنفطار",
+        "url": "https://server8.mp3quran.net/afs/082.mp3"
+    },
+    {
+        "name": "المطففين",
+        "url": "https://server8.mp3quran.net/afs/083.mp3"
+    },
+    {
+        "name": "الإنشقاق",
+        "url": "https://server8.mp3quran.net/afs/084.mp3"
+    },
+    {
+        "name": "البروج",
+        "url": "https://server8.mp3quran.net/afs/085.mp3"
+    },
+    {
+        "name": "الطارق",
+        "url": "https://server8.mp3quran.net/afs/086.mp3"
+    },
+    {
+        "name": "الأعلى",
+        "url": "https://server8.mp3quran.net/afs/087.mp3"
+    },
+    {
+        "name": "الغاشية",
+        "url": "https://server8.mp3quran.net/afs/088.mp3"
+    },
+    {
+        "name": "الفجر",
+        "url": "https://server8.mp3quran.net/afs/089.mp3"
+    },
+    {
+        "name": "البلد",
+        "url": "https://server8.mp3quran.net/afs/090.mp3"
+    },
+    {
+        "name": "الشمس",
+        "url": "https://server8.mp3quran.net/afs/091.mp3"
+    },
+    {
+        "name": "الليل",
+        "url": "https://server8.mp3quran.net/afs/092.mp3"
+    },
+    {
+        "name": "الضحى",
+        "url": "https://server8.mp3quran.net/afs/093.mp3"
+    },
+    {
+        "name": "الشرح",
+        "url": "https://server8.mp3quran.net/afs/094.mp3"
+    },
+    {
+        "name": "التين",
+        "url": "https://server8.mp3quran.net/afs/095.mp3"
+    },
+    {
+        "name": "العلق",
+        "url": "https://server8.mp3quran.net/afs/096.mp3"
+    },
+    {
+        "name": "القدر",
+        "url": "https://server8.mp3quran.net/afs/097.mp3"
+    },
+    {
+        "name": "البينة",
+        "url": "https://server8.mp3quran.net/afs/098.mp3"
+    },
+    {
+        "name": "الزلزلة",
+        "url": "https://server8.mp3quran.net/afs/099.mp3"
+    },
+    {
+        "name": "العاديات",
+        "url": "https://server8.mp3quran.net/afs/100.mp3"
+    },
+    {
+        "name": "القارعة",
+        "url": "https://server8.mp3quran.net/afs/101.mp3"
+    },
+    {
+        "name": "التكاثر",
+        "url": "https://server8.mp3quran.net/afs/102.mp3"
+    },
+    {
+        "name": "العصر",
+        "url": "https://server8.mp3quran.net/afs/103.mp3"
+    },
+    {
+        "name": "الهمزة",
+        "url": "https://server8.mp3quran.net/afs/104.mp3"
+    },
+    {
+        "name": "الفيل",
+        "url": "https://server8.mp3quran.net/afs/105.mp3"
+    },
+    {
+        "name": "قريش",
+        "url": "https://server8.mp3quran.net/afs/106.mp3"
+    },
+    {
+        "name": "الماعون",
+        "url": "https://server8.mp3quran.net/afs/107.mp3"
+    },
+    {
+        "name": "الكوثر",
+        "url": "https://server8.mp3quran.net/afs/108.mp3"
+    },
+    {
+        "name": "الكافرون",
+        "url": "https://server8.mp3quran.net/afs/109.mp3"
+    },
+    {
+        "name": "النصر",
+        "url": "https://server8.mp3quran.net/afs/110.mp3"
+    },
+    {
+        "name": "النازعات",
+        "url": "https://server8.mp3quran.net/afs/079.mp3"
+    },
+    {
+        "name": "عبس",
+        "url": "https://server8.mp3quran.net/afs/080.mp3"
+    },
+    {
+        "name": "التكوير",
+        "url": "https://server8.mp3quran.net/afs/081.mp3"
+    },
+    {
+        "name": "الإنفطار",
         "url": "https://server8.mp3quran.net/afs/082.mp3"
     }
 ]
