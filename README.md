@@ -1,5 +1,12 @@
 
-<h2 align="center">كل يوم سور من القرآن الكريم | Every day a chapters of the Holy Quran</h2>
+<h2 align="center">كل يوم سور من القرآن الكريم | Every day a chapters of the Holy Quran
+
+
+<p>
+
+<a href="https://emadadel4.github.io/Soura" target="_blink" style="text-decoration: none;">أستمع الان 🔊
+</a></p>
+</h2>
 
 
 <p>
@@ -10,10 +17,18 @@
 
 <div align="center">
 
-<a href="https://emadadel4.github.io/Soura" target="_blink" style="text-decoration: none;">أستمع الان 🔊</a>
+## Support Palestine
 
- <p class="footer-heart">
-Made with <g-emoji class="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
-<img class="emoji" alt="heart" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png"></g-emoji> by <a href="https://t.me/emadadel4">Emad Adel</a>
-- صدقة جارية
-</div>
+<a href="https://www.palestinercs.org/en/Donation" target="blank">
+Deliver humanitarian aid directly to Palestine.
+</a><br>
+
+<a href="Support.md" target="blank">
+Other way to support
+</a>
+
+
+<p align="center">
+  If you can't lift the injustice, at least tell everyone about it.
+</p>
+
