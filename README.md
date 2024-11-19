@@ -23,7 +23,7 @@
 Deliver humanitarian aid directly to Palestine.
 </a><br>
 
-<a href="Support.md" target="blank">
+<a href="https://github.com/emadadel4/itt/blob/main/docs/Support.md" target="blank">
 Other way to support
 </a>
 
