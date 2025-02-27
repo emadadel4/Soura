@@ -1,54 +1,73 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: whitesmoke;
+*, *::before, *::after {
     margin: 0;
-    flex-direction: column;
-    font-family: "Cairo", sans-serif;
-
-}
-
-.text {
-    font-size: 24px;
-    color: #333;
-    text-align: center;
-}
-
-#souraList {
-    display: flex;
-    justify-content: center; /* Center the list items horizontally */
-    text-align: center;
-    text-decoration: none;
-    list-style-type: none;
-    gap: 10px;
     padding: 0;
-    margin-bottom: 50px;
-
+    box-sizing: border-box;
 }
 
-.button {
-    width: 80px;
-    height: 80px;
-    background-color: #4CAF50;
-    border-radius: 50%;
+
+body {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    background-size: cover;
+    margin: auto auto auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-blend-mode: overlay;
+    background-image: url('https://images.pexels.com/photos/8440924/pexels-photo-8440924.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+}
+
+.content {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 36px;
-    color: white;
-    border: none;
+    grid-column: span 1;
 }
 
-a{
-    text-decoration: none;
+.player {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    color: white;
+    text-align: center;
+    grid-column: span 1;
+}
+
+.prayer-times input, .prayer-times select {
+    border: 0px solid #ccc;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+
+.prayer-times select{
+    text-align: left;
+}
+
+.prayer-times h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+li {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .button:hover {
-    background-color: #45a049;
+    background-color: transparent;
 }
 
 .button i {
@@ -57,39 +76,41 @@ a{
 
 .play i {
     content: '\f04b';
+    font-size: 50px;
 }
 
 .pause i {
     content: '\f04c'; 
+    font-size: 50px;
 }
 
-footer {
-    margin-top: 20px;
+#souraList {
+    display: flex;
+    justify-content: center; 
     text-align: center;
-    color: black;
-    width: 100%;
-    font-size: 17px;
-    position: absolute;
-    bottom: 0;
+    text-decoration: none;
+    list-style-type: none;
+    margin-bottom: 25px;
+    gap: 10px;
+}
+
+.text{
+    margin-bottom: 25px;
     font-weight: bold;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+.dev {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+    color: #333;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 500px;
-    padding: 2px;
-    border-radius: 20px;
-    background-color: white;
-    padding: 50px;
-    text-align: center
+a i{
+    text-decoration: none;
+    color: antiquewhite;
+    font-size: 25px;
+    margin: 25px;
+    cursor: pointer;
 }
