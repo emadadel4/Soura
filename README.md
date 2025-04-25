@@ -7,9 +7,9 @@
 
 ### Support Palestine
 
-[Donation](https://www.palestinercs.org/en/Donation)
+- [Donation](https://www.palestinercs.org/en/Donation)
 
-[Other way to support (boycott)](https://boycott4.github.io/boycott/)
+- [Other way to support (boycott)](https://boycott4.github.io/boycott/)
 
 <i>If you can't lift the injustice, at least tell everyone about it.
 </i>
