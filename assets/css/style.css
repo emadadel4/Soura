@@ -1,116 +1,80 @@
-*, *::before, *::after {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+  }
 
+  :root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --button: #1f85f2;
+  }
+  
+  /* Dark Mode styles */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161e27;
+      --text: darkgray;
+      --button: #1f85f2;
+    }
+  }
 
-body {
-    display: grid;
-    grid-template-rows: 1fr auto;
-    grid-template-columns: 1fr;
-    height: 100vh;
-    background-size: cover;
-    margin: auto auto auto;
-    background-color: rgba(0, 0, 0, 0.8);
-    background-blend-mode: overlay;
-    background-image: url('https://images.pexels.com/photos/8440924/pexels-photo-8440924.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-}
-
-.content {
+  a, p {
+    text-decoration: none;
+    color: var(--text);
+  }
+  
+  body {
+    min-height: 100vh;
+    background-color: var(--bg);
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-column: span 1;
-}
-
-.player {
-    padding-top: 20px;
-    padding-bottom: 50px;
+    flex-direction: column;
+    text-align: center;
+    color: var(--text);
+  }
+  
+  #souraTitle {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  
+  #playPauseButton {
+    font-size: 2rem;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    background-color: var(--button);
     color: white;
-    text-align: center;
-    grid-column: span 1;
-}
-
-.prayer-times input, .prayer-times select {
-    border: 0px solid #ccc;
-    padding: 8px;
-    border-radius: 5px;
-}
-
-
-.prayer-times select{
-    text-align: left;
-}
-
-.prayer-times h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    margin-top: 25px;
-    color: white;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    width: 100%;
-}
-
-li {
-    background-color: rgba(0, 0, 0, 0.1);
-    color: #ffffff;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 8px;
     display: flex;
-    justify-content: space-between;
-}
-
-.button:hover {
-    background-color: transparent;
-}
-
-.button i {
-    pointer-events: none;
-}
-
-.play i {
-    content: '\f04b';
-    font-size: 50px;
-}
-
-.pause i {
-    content: '\f04c'; 
-    font-size: 50px;
-}
-
-#souraList {
-    display: flex;
-    justify-content: center; 
-    text-align: center;
-    text-decoration: none;
-    list-style-type: none;
-    margin-bottom: 25px;
-    gap: 10px;
-}
-
-.text{
-    margin-bottom: 25px;
-    font-weight: bold;
-}
-
-.dev {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 14px;
-    color: #333;
-}
-
-a i{
-    text-decoration: none;
-    color: antiquewhite;
-    font-size: 25px;
-    margin: 25px;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-}
+    transition: background 0.3s ease;
+  }
+  
+  #playPauseButton:hover {
+    background-color: #14555b;
+  }
+  
+  footer {
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+  }
+  
+  footer p {
+    margin-top: 10px;
+  }
+  
+  .footer-heart img {
+    vertical-align: middle;
+  }
+  
+  audio {
+    display: none;
+  }
